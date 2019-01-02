@@ -23615,7 +23615,10 @@ var Hello = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Hello.prototype.render = function () {
-        return React.createElement("h1", null, "Hello React");
+        var framework = this.props.framework;
+        return React.createElement("h1", null,
+            "Hello ",
+            framework);
     };
     return Hello;
 }(React.Component));
@@ -23637,8 +23640,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var Hello_1 = __webpack_require__(/*! ./components/Hello */ "./src/client/components/Hello.tsx");
-ReactDOM.render(React.createElement(Hello_1.default, null), document.getElementById('app'));
+__webpack_require__(/*! ./styles/style.scss */ "./src/client/styles/style.scss");
+ReactDOM.render(React.createElement(Hello_1.default, { framework: 'React' }), document.getElementById('app'));
 
+
+/***/ }),
+
+/***/ "./src/client/styles/style.scss":
+/*!**************************************!*\
+  !*** ./src/client/styles/style.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 

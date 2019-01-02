@@ -1,8 +1,13 @@
 import * as React from 'react';
 
-class Hello extends React.Component {
+interface Props {
+  framework: string
+}
+
+class Hello extends React.Component<Props, {}> {
   render(){
-    return <h1>Hello React</h1>
+    const { framework } = this.props;
+    return <h1>Hello {framework}</h1>
   }
 }
 
