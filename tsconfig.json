@@ -6,7 +6,11 @@
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "src",
+    "paths": {
+      "utils": ["client/utils/index.ts"]
+    }
   },
   "include": [
     "./src/**/*"
