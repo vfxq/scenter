@@ -4,15 +4,14 @@
   "description": "Site of Spirit Center",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack",
+    "build": "./node_modules/.bin/webpack --config ./configs/webpack/webpack.prod.js",
     "test": "./node_modules/.bin/jest",
-    "watch:server": "nodemon -e ts,tsx,js --watch src index.js",
     "start": "node index.js",
     "dev": "ts-node ./src/server/index.ts"
   },
   "jest": {
     "setupFiles": [
-      "<rootDir>/test-setup.js"
+      "<rootDir>/configs/tests/test-setup.js"
     ],
     "moduleFileExtensions": [
       "ts",
@@ -20,7 +19,7 @@
       "js"
     ],
     "transform": {
-      "^.*\\.(ts|tsx)": "<rootDir>/test-preprocessor.js"
+      "^.*\\.(ts|tsx)": "<rootDir>/configs/tests/test-preprocessor.js"
     },
     "testMatch": [
       "**/__tests__/*.(ts|tsx|js)"
@@ -63,6 +62,7 @@
     "ts-node": "^7.0.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.5.0",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-merge": "^4.2.1"
   }
 }

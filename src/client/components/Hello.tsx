@@ -7,7 +7,12 @@ interface Props {
 class Hello extends React.Component<Props, {}> {
   render(){
     const { framework } = this.props;
-    return <h1>Hello {framework}</h1>
+    return (
+      <>
+        <h1>Hello {framework}</h1>
+        Nice! Awesome!!! Really cute!!
+      </>
+    );
   }
 }
 
