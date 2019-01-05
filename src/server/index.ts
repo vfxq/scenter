@@ -15,7 +15,7 @@ app.use(require("webpack-hot-middleware")(compiler, {heartbeat: 2000}));
 
 initializeRoutes(app);
 app.set("views", join(__dirname, "views"));
-app.use("/", express.static(join(__dirname, "..", "..", "target")));
+app.use("/", express.static(join(__dirname, "..", "client")));
 
 app.listen(port, ():void => {
   console.log('Listening on port: ', port);

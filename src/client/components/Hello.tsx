@@ -12,7 +12,7 @@ class Hello extends React.Component<Props, {}> {
     return (
       <>
         <h1>Hello {framework}</h1>
-        Nice! Awesome!!! Really cute!!
+        Nice! Awesome!!! Really cute!! Done!!!
       </>
     );
   }
