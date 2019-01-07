@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import { Provider } from 'mobx-react'
 import appStore from '../../store';
 import Layout from '../layout';
-import Menu from "../menu";
+import Header from "../header";
 import layoutStore from "../../store/layoutStore";
 
 @observer
@@ -12,7 +12,7 @@ class App extends React.Component<{}, {}>{
     return (
       <Provider appStore={appStore} layoutStore={layoutStore}>
         <Layout>
-          <Menu />
+          <Header />
         </Layout>
       </Provider>
     )

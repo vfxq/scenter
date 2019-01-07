@@ -1,0 +1,15 @@
+.desktopHeader{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #080;
+  .desktopMenu {
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #800;
+    li{
+      display: inline-block;
+      padding: 25px 30px;
+    }
+  }
+}
