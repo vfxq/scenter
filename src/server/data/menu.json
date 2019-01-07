@@ -1,0 +1,20 @@
+{
+  "menuItems": [
+    { 
+      "title": "О нас",
+      "link": "#about"
+    },
+    { 
+      "title": "Помощь",
+      "link": "#help"
+    },
+    { 
+      "title": "Амулеты",
+      "link": "#amulets"
+    },
+    { 
+      "title": "Цены",
+      "link": "costs"
+    }
+  ]
+}

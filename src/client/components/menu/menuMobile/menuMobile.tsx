@@ -1,12 +1,17 @@
 import * as React from 'react';
 
-class MenuMobile extends React.Component{
+interface Props {
+  menu: any
+}
+
+class MenuMobile extends React.Component<Props, {}>{
   
   render(){
-   
+    const { menu } = this.props;
     return(
       <>
         Desktop Mobile
+        { menu }
       </>
     )
   }

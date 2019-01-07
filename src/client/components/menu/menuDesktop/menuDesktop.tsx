@@ -1,13 +1,17 @@
 import * as React from 'react';
 
-class MenuDesktop extends React.Component{
+interface Props {
+  menu: any
+}
+class MenuDesktop extends React.Component<Props, {}>{
   
   render(){
-   
+    const { menu } = this.props;
+
     return(
-      <>
-        Desktop header
-      </>
+      <ul>
+        {menu}
+      </ul>
     )
   }
 }
