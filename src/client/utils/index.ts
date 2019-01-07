@@ -1,3 +1,3 @@
 export const isMobile = () => {
-  return 'test';
+  return document.documentElement.scrollWidth < 992 ? true : false;
 }

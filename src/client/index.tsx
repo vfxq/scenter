@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import Hello from './components/Hello';
+import App from './components/app';
 require('./styles/style.scss');
 
 ReactDOM.render(
-  <Hello framework='React'/>, 
+  <App/>, 
   document.getElementById('app')
 );

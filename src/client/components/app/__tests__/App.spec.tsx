@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Hello from '../Hello';
+import App from '../';
 
 it("renders the heading", () => {
-  const result = shallow(<Hello framework="React"/>).contains(<h1>Hello React</h1>);
+  const result = shallow(<App />).contains(<div className='App'>Test</div>);
   expect(result).toBeTruthy();
 });
