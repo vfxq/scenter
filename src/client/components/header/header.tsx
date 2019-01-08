@@ -5,6 +5,7 @@ import HeaderDesktop from './headerDesktop';
 import MenuMobile from './menuMobile'; 
 import { TAppStore, TLayoutStore, TMenuItem } from '../../store';
 import { Container, Row, Col } from 'reactstrap';
+require('./styles/style.scss');
 
 interface Props {
   appStore?: TAppStore,
@@ -24,16 +25,20 @@ class Header extends React.Component<Props, {}>{
     const { width } = layoutStore;
     const img = require('./img/header_img.png')
       
-    const renderedMenu = menu && (menu.length !== 0) ? menu.menuItems.map((item:TMenuItem) => <li key={item.link}>{item.title}</li>) : null;  
+    const renderedMenu = menu && (menu.length !== 0) ? menu.menuItems.map((item:TMenuItem) => <li key={item.link}><a href={`#${item.link}`}>{item.title}</a></li>) : null;  
     const body = width < 992 ? <MenuMobile menu={renderedMenu} /> : <HeaderDesktop menu={renderedMenu}/>
 
     return(
       <>
         {body}
         <Section bgImage={img}>
-          <Container className="fixed">
+          <Container>
             <Row>
-              <Col>data</Col>
+              <Col>
+                <div className="slogan">
+                  Найди свой путь в этом мире
+                </div>
+              </Col>
             </Row>
           </Container>
         </Section>
