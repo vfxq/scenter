@@ -4,7 +4,7 @@ import Section from '../shared/section';
 import HeaderDesktop from './headerDesktop';
 import MenuMobile from './menuMobile'; 
 import { TAppStore, TLayoutStore, TMenuItem } from '../../store';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 interface Props {
   appStore?: TAppStore,
@@ -22,6 +22,7 @@ class Header extends React.Component<Props, {}>{
     const { appStore, layoutStore } = this.props;
     const { menu } = appStore;
     const { width } = layoutStore;
+    const img = require('./img/header_img.png')
       
     const renderedMenu = menu && (menu.length !== 0) ? menu.menuItems.map((item:TMenuItem) => <li key={item.link}>{item.title}</li>) : null;  
     const body = width < 992 ? <MenuMobile menu={renderedMenu} /> : <HeaderDesktop menu={renderedMenu}/>
@@ -29,14 +30,10 @@ class Header extends React.Component<Props, {}>{
     return(
       <>
         {body}
-        <Section>
+        <Section bgImage={img}>
           <Container className="fixed">
             <Row>
-              swisniwd
-              <h1>dewnfdewf</h1>
-              <h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1>
-              <h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1>
-              <h1>dewnfdewf</h1><h1>dewnfdewf</h1><h1>dewnfdewf</h1>
+              <Col>data</Col>
             </Row>
           </Container>
         </Section>

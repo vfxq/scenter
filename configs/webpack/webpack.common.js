@@ -35,6 +35,13 @@ const webpackConf = {
           fallback: 'style-loader', 
           use: ['css-loader', 'sass-loader']
         }))
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: 'file-loader',
+        options:{
+          name:'image/[path][name].[ext]'
+        }
       }
     ]
   },
