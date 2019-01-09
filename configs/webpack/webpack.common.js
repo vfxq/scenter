@@ -42,6 +42,11 @@ const webpackConf = {
         options:{
           name:'image/[path][name].[ext]'
         }
+      },
+      {
+        test: /\.(otf)$/,
+        loader: 'url-loader',
+        exclude: /node_modules/
       }
     ]
   },
