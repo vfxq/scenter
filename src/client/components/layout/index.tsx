@@ -17,8 +17,6 @@ class Layout extends React.Component<Props, any>{
   render(){
     const { children, layoutStore } = this.props;
 
-    console.log('--props', this.props);
-
     return(
       <>
         <ReactResizeDetector handleWidth onResize={this.onResize} />

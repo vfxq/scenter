@@ -3,20 +3,22 @@ import { Color } from 'csstype';
 require('./styles/style.scss');
 
 interface IProps{
-  bgImage?: string
+  bgImage?: string,
+  height?: number
 }
 
 class Section extends React.Component<IProps, {}>{
   render(){
-    const { bgImage, children } = this.props;
+    const { bgImage, height, children } = this.props;
     
     const style = {
-      "backgroundImage": `url(${bgImage})`
+      "backgroundImage": `url(${bgImage})`,
+      "height": height || 'auto'
     }
 
     return(
       <section className="section" style={style}>
-        <div className="test">
+        <div className="content">
           {children}
         </div>
       </section>

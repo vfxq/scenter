@@ -4,7 +4,6 @@ import Section from '../shared/section';
 import HeaderDesktop from './headerDesktop';
 import MenuMobile from './menuMobile'; 
 import { TAppStore, TLayoutStore, TMenuItem } from '../../store';
-import { Container, Row, Col } from 'reactstrap';
 require('./styles/style.scss');
 
 interface Props {
@@ -31,16 +30,10 @@ class Header extends React.Component<Props, {}>{
     return(
       <>
         {body}
-        <Section bgImage={img}>
-          <Container>
-            <Row>
-              <Col>
-                <div className="slogan">
-                  Найди дорогу к себе
-                </div>
-              </Col>
-            </Row>
-          </Container>
+        <Section bgImage={img} height={500}>
+          <div className="slogan">
+            <h1>Найди дорогу к себе</h1>
+          </div>
         </Section>
       </>
     )

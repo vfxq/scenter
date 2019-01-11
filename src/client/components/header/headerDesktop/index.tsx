@@ -1,6 +1,5 @@
 import * as React from 'react';
 require('./styles/style.scss');
-const logo = require('./img/logo.svg');
 
 interface Props {
   menu: any
@@ -12,7 +11,7 @@ class HeaderDesktop extends React.Component<Props, {}>{
 
     return(
       <div className="desktopHeader">
-        <div className="data">
+        <div className="content">
           <div className="topLine">
             <span>8 (800) 000-700-00</span>
             <button className="order">Записаться</button>

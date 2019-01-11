@@ -1,7 +1,10 @@
 .slogan {
   height: 100%;
-  padding-top: 200px;
-  font-family: "Lemon Tuesday", Helvetica, sans-serif;
-  font-size: 5em;
-  color: #fff;
+  padding-top: 150px;
+  h1 {
+    text-align: left;
+    color: #fff !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fff;
+  }
 }
