@@ -5,6 +5,7 @@ import HeaderDesktop from './headerDesktop';
 import MenuMobile from './menuMobile'; 
 import { TAppStore, TLayoutStore, TMenuItem } from '../../store';
 require('./styles/style.scss');
+const img = require('./img/header_img-min.png')
 
 interface Props {
   appStore?: TAppStore,
@@ -22,7 +23,6 @@ class Header extends React.Component<Props, {}>{
     const { appStore, layoutStore } = this.props;
     const { menu } = appStore;
     const { width } = layoutStore;
-    const img = require('./img/header_img.png')
       
     const renderedMenu = menu && (menu.length !== 0) ? menu.menuItems.map((item:TMenuItem) => <li key={item.link}><a href={`#${item.link}`}>{item.title}</a></li>) : null;  
     const body = width < 992 ? <MenuMobile menu={renderedMenu} /> : <HeaderDesktop menu={renderedMenu}/>

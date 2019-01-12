@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Color } from 'csstype';
 require('./styles/style.scss');
 
 interface IProps{
@@ -11,13 +10,14 @@ class Section extends React.Component<IProps, {}>{
   render(){
     const { bgImage, height, children } = this.props;
     
-    const style = {
-      "backgroundImage": `url(${bgImage})`,
+    const bg = bgImage ? {"backgroundImage": `url(${bgImage})`} : null;
+    
+    const styles = {
       "height": height || 'auto'
-    }
+    };
 
     return(
-      <section className="section" style={style}>
+      <section className="section" style={Object.assign( styles, bg )}>
         <div className="content">
           {children}
         </div>

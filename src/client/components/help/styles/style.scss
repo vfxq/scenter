@@ -1,0 +1,50 @@
+.help {
+  text-align: center;
+}
+
+.flex-container {
+  width: 1140;
+  display: -webkit-flex; 
+  display: flex; /*отображает контейнер как блочный элемент*/
+  flex-wrap: wrap;
+  text-align: center;
+  .helpItem {
+    position: relative;
+    width: 25%;
+    padding: 30px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    .popupHelpItem {
+      position: fixed;
+      background: rgba(0,0,0,0.5);
+      top:0;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .popupHelpItem__container {
+        position: relative;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.9);
+        text-align: left;
+        padding: 20px 40px;
+        
+        .popupHelpItem__close {
+          position: absolute;
+          width: 40px;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}

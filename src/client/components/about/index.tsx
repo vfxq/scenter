@@ -4,8 +4,8 @@ require('./styles/style.scss');
 
 class About extends React.Component{
   render(){
-    return(
-      <Section height={550}>
+    return (
+      <Section height={600}>
         <h1>О духовном центре</h1>
         <div className="bg_pict">
           <div className="about">
@@ -15,8 +15,8 @@ class About extends React.Component{
             Помощь всегда индивидуальна и возможна только при личной встрече. 
           </div>
         </div>
-      </Section>
-    )
+    </Section>
+    );
   }
 }
 

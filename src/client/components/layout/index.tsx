@@ -21,7 +21,6 @@ class Layout extends React.Component<Props, any>{
       <>
         <ReactResizeDetector handleWidth onResize={this.onResize} />
         {children}
-        <h1>{layoutStore.width}</h1>
       </>
     )
   }
