@@ -24,6 +24,19 @@ h1 {
   color: #0085c7;
   margin: 0;
 }
+h4 {
+  font-family: "Lemon Tuesday", Helvetica, sans-serif;
+  font-size: 1.6em;
+  text-align: left;
+  background: linear-gradient(90deg, #0085c7 45%, #34f3f5 65%, #34f3f5);
+  line-height: 2em;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0085c7;
+  margin: 0;
+}
+
 
 .fixed {
   position: fixed;

@@ -25,7 +25,7 @@ class Header extends React.Component<Props, {}>{
     const { width } = layoutStore;
       
     const renderedMenu = menu && (menu.length !== 0) ? menu.menuItems.map((item:TMenuItem) => <li key={item.link}><a href={`#${item.link}`}>{item.title}</a></li>) : null;  
-    const body = width < 992 ? <MenuMobile menu={renderedMenu} /> : <HeaderDesktop menu={renderedMenu}/>
+    const body = width < 992 ? <MenuMobile menu={renderedMenu} /> : <HeaderDesktop menu={renderedMenu} />
 
     return(
       <>

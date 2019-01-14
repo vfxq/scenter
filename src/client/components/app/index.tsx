@@ -7,6 +7,7 @@ import layoutStore from "../../store/layoutStore";
 import Header from "../header";
 import About from "../about";
 import Help from "../help";
+import Masters from "../masters";
 import Contacts from "../contacts";
 
 @observer
@@ -18,6 +19,7 @@ class App extends React.Component<{}, {}>{
           <Header />
           <About />
           <Help />
+          <Masters />
           <Contacts />
         </Layout>
       </Provider>

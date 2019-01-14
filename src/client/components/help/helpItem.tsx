@@ -17,20 +17,27 @@ class HelpItem extends React.Component<IProps, any>{
   }
 
   public togglePopup = () => {
-    this.setState({
-      show: !this.state.show
-    });
+    console.log('--- toggle', this.state);
+    this.setState((state:any) => (
+      {show: !state.show}
+    ));
   }
+
+ 
 
   public popup = () => {
     return (
       <div className="popupHelpItem">
+        <div className="popupHelpItem__bground" onClick={this.togglePopup}>
+          
+        </div>
         <div className="popupHelpItem__container">
           <div className="popupHelpItem__close" onClick={this.togglePopup}>
             close
           </div>
           <div>
             <div className="popupHelpItem__content">
+            <h4>{this.props.data.title}</h4>
             {this.props.data.extended}
             </div>
           </div>
@@ -44,13 +51,16 @@ class HelpItem extends React.Component<IProps, any>{
     const popup = this.state.show ? this.popup() : null;
 
     return (
-      <div onClick={this.togglePopup}>
+      <>
+        <div onClick={this.togglePopup}>
+        
+          <img src={require(`./img/${id}-min.png`)}/>
+          <p>
+            {title}
+          </p>
+        </div>
         {popup}
-        <img src={require(`./img/${id}-min.png`)}/>
-        <p>
-          {title}
-        </p>
-      </div>
+      </>
     )
   }
 }
