@@ -22,7 +22,7 @@ class Layout extends React.Component<Props, any>{
 
   public handleScroll = () => {
     const { setScrolled } = this.props.layoutStore;
-    const scroll = window.scrollY > 370 ? true : false;
+    const scroll = window.scrollY > 100 ? true : false;
     setScrolled(scroll);
   }
 

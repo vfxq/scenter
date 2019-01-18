@@ -15,7 +15,7 @@
       "components": ["client/components"]
     }
   },
-  "include": [
-    "./src/**/*"
-  ]
+  // "include": [
+  //   "./src/**/*"
+  // ]
 }

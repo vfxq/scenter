@@ -37,11 +37,15 @@ const webpackConf = {
         }))
       },
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.(png|jpg)$/,
         loader: 'file-loader',
         options:{
           name:'image/[path][name].[ext]'
         }
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       },
       {
         test: /\.(otf)$/,

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
+import Logo from './img/logo.svg';
+
 require('./styles/style.scss');
 
 interface Props {
@@ -13,29 +15,29 @@ class HeaderDesktop extends React.Component<Props, {}>{
   
   render(){
     const { menu, layoutStore } = this.props;
-
-    const style={
-      background: layoutStore.scrolled ? 'rgba(f,f,f,0.3)' : 'transparent',
-      a: {
-        color: layoutStore.scrolled ? '#0000ff' : '#ff0000'
-      }
-    };
-
-    var liClasses = classNames({
+    
+    const logoColor = layoutStore.scrolled ? "rgba(0,0,0,0.5)" : "#fff";
+    
+    const desktopHeader = classNames({
       'desktopHeader': true,
       'desktopHeader__scrolled': layoutStore.scrolled 
     });
 
+    const desktopHeaderName = classNames({
+      "desktopHeader__name": true,
+      "hide": layoutStore.scrolled
+    });  
+
     return(
-      <div className={liClasses}>
+      <div className={desktopHeader}>
         <div className="content">
-          <div className="topLine">
-            <span>8 (800) 000-700-00</span>
-            <button className="order">Записаться</button>
-          </div>
+          <Logo className="desktopHeader__logo" fill={logoColor} height="3.2em" width="3.2em"/>
+          <div className={desktopHeaderName}>Духовный центр</div>
           <ul className="desktopMenu">
             {menu}
           </ul>
+            <div className="desktopHeader__phone">8 (800) 000-700-00</div>
+          <button className="desktopHeader__order">Записаться</button>
         </div>
       </div>
     )

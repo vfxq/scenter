@@ -1,29 +1,46 @@
 .desktopHeader{
   position: fixed;
   top: 0;
-  z-index: 5000;
+  z-index: 500;
   padding-top: 25px;
   width: 100%;
   .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     color: #fff;
-    .topLine {
-      background-image: url('../img/logo.svg');
-      background-repeat: no-repeat;
-      height: 45px;
+    .desktopHeader__logo {
+      flex-shrink: 0;
+    }
+    .desktopHeader__name {
+      padding-left: 20px;
+      flex-grow: 3;
+      flex-shrink: 10;
+      text-transform: uppercase;
+      font-size: 3.2em;
+      line-height: 45px;
+    }
+    .desktopHeader__phone {
+      flex-grow: 3;
+      flex-shrink: 10;
+      padding-right: 20px;
       text-align: right;
-      .order {
-        width: 156px;
-        height: 45px;
-        border: none;
-        border-radius: 22px;
-        background: linear-gradient(to right, #0085c7, #34f3f5);
-        color: #fff;
-        font-family: "PT Sans", serif;
-        font-size: 1.2em;
-
-      }
+      line-height: 45px;
+    }
+    .desktopHeader__order {
+      width: 156px;
+      height: 45px;
+      flex-shrink: 0;
+      border: none;
+      border-radius: 22px;
+      background: linear-gradient(to right, #0085c7, #34f3f5);
+      color: #fff;
+      font-family: "PT Sans", serif;
+      font-size: 1.2em;
     }
     .desktopMenu {
+      width: 100%;
+      order: 5;
       font-family: 'PT Sans', serif;
       font-size: 1.6em;
       li {
@@ -52,6 +69,8 @@
   background-color: rgba(255,255,255, 0.5);
   .content {
     .desktopMenu {
+      width: auto;
+      order: 0;
       li {
         a{
           color: rgba(0,0,0,0.5);
