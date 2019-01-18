@@ -16,14 +16,21 @@ const webpackConf = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.scss'],
     plugins: [
-      new TsconfigPathsPlugin()
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, "../../tsconfig.json"),
+        logLevel: "info",
+        extensions: [".ts", ".tsx"]
+      })
     ]
   },
   module: {
     rules: [
       {
-        test: /.tsx?$/,
+        test: /.(tsx|ts)$/,
         loader: 'awesome-typescript-loader',
+        options: {
+          configFile: path.resolve(__dirname, "../../tsconfig.json")
+        },
         exclude: /node_modules/
       }, {
         test: /.js$/,

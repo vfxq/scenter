@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Section from '../shared/section';
+import { Section } from '@shared';
 import HelpItem from './helpItem';
 require('./styles/style.scss');
 
