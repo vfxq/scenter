@@ -9,6 +9,7 @@ interface Props {
   menu: any,
   layoutStore?: any
 }
+
 @inject('layoutStore')
 @observer
 class HeaderDesktop extends React.Component<Props, {}>{
@@ -16,7 +17,7 @@ class HeaderDesktop extends React.Component<Props, {}>{
   render(){
     const { menu, layoutStore } = this.props;
     
-    const logoColor = layoutStore.scrolled ? "rgba(0,0,0,0.5)" : "#fff";
+    const logoColor = layoutStore.scrolled ? "rgba(0,0,0,0.8)" : "#fff";
     
     const desktopHeader = classNames({
       'desktopHeader': true,

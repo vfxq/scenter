@@ -55,7 +55,7 @@ const webpackConf = {
         use: ['@svgr/webpack'],
       },
       {
-        test: /\.(otf)$/,
+        test: /\.(otf|ttf)$/,
         loader: 'url-loader',
         exclude: /node_modules/
       }

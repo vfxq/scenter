@@ -27,7 +27,6 @@ class Layout extends React.Component<Props, any>{
   }
 
   private onResize = (width:number):void => {
-    
     this.props.layoutStore.setWidth(width);
   }
 

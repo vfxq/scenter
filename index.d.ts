@@ -3,4 +3,7 @@ declare module '*.svg' {
   export default value;
 }
 
-console.log('Done!!!');
+// declare module '*.scss' {
+//   const content: {[className: string]: string};
+//   export default content;
+// }
