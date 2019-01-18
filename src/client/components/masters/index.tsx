@@ -1,5 +1,5 @@
 import * as React from "react";
-import Section from '../shared/section';
+import { Section } from '@shared';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 

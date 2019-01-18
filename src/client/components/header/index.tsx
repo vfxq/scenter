@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
-import Section from '../shared/section';
+import { Section } from '@shared';
 import HeaderDesktop from './headerDesktop';
 import MenuMobile from './menuMobile'; 
 import { TAppStore, TLayoutStore, TMenuItem } from '../../store';

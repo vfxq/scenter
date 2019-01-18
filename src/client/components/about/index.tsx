@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Section from '../shared/section';
+import { Section } from '@shared';
 require('./styles/style.scss');
 
 class About extends React.Component{

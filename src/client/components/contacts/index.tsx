@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Section from '../shared/section';
+import { Section } from '@shared';
 
 class Contacts extends React.Component {
   render(){

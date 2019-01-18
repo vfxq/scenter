@@ -1,7 +1,4 @@
 import { observable, action } from 'mobx';
-import requestData from './utils';
-import { ReactElement } from 'react';
-import ReactResizeDetector from 'react-resize-detector';
 
 class AppStore {
   @observable width:number = 0;
