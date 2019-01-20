@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { inject, observer } from 'mobx-react';
+import { Section } from '@shared';
 import Logo from './img/logo.svg';
 
 require('./styles/style.scss');
@@ -31,15 +32,17 @@ class HeaderDesktop extends React.Component<Props, {}>{
 
     return(
       <div className={desktopHeader}>
-        <div className="content">
-          <Logo className="desktopHeader__logo" fill={logoColor} height="3.2em" width="3.2em"/>
-          <div className={desktopHeaderName}>Духовный центр</div>
-          <ul className="desktopMenu">
-            {menu}
-          </ul>
-            <div className="desktopHeader__phone">8 (800) 000-700-00</div>
-          <button className="desktopHeader__order">Записаться</button>
-        </div>
+        <Section>
+          <div className="desktopHeader__content">
+            <Logo className="desktopHeader__logo" fill={logoColor} height="3.2em" width="3.2em"/>
+            <div className={desktopHeaderName}>Духовный центр</div>
+            <ul className="desktopHeader__menu">
+              {menu}
+            </ul>
+              <div className="desktopHeader__phone">8 (800) 000-700-00</div>
+            <button className="desktopHeader__order">Записаться</button>
+          </div>
+        </Section>
       </div>
     )
   }

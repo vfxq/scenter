@@ -7,6 +7,8 @@
   src: url("../fonts/Roboto-BoldCondensed.ttf");
 }
 
+$breakpoint-tablet: 992px;
+
 body, ul {
   margin: 0;
   padding: 0;
@@ -14,6 +16,10 @@ body, ul {
   font-family: 'Open Sans', Arial;
   line-height: 20px;
   text-align: justify;
+}
+
+:focus {
+  outline: none;
 }
 
 h1 {
@@ -49,7 +55,3 @@ h4 {
   position: fixed;
 }
 
-.content {
-  width: 1110px;
-  margin: 0 auto;
-}

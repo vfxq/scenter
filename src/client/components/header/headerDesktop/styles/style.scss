@@ -6,82 +6,87 @@
   z-index: 500;
   padding-top: 25px;
   width: 100%;
-  .content{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    color: #fff;
-    .desktopHeader__logo {
-      flex-shrink: 0;
-    }
-    .desktopHeader__name {
-      padding-left: 20px;
-      flex-grow: 3;
-      flex-shrink: 10;
-      text-transform: uppercase;
-      line-height: 45px;
-      font-family: "Roboto-BoldCondensed", Arial;
-      font-size: 2.4em;
-      letter-spacing: 0.18em;
-    }
-    .desktopHeader__phone {
-      flex-grow: 3;
-      flex-shrink: 10;
-      padding-right: 20px;
-      text-align: right;
-      line-height: 45px;
-    }
-    .desktopHeader__order {
-      width: 156px;
-      height: 45px;
-      flex-shrink: 0;
-      border: none;
-      border-radius: 22px;
-      background: linear-gradient(to right, #0085c7, #34f3f5);
-      color: #fff;
-      font-family: "PT Sans", serif;
-      font-size: 1.2em;
-    }
-    .desktopMenu {
-      width: 100%;
-      order: 5;
-      font-family: 'PT Sans', serif;
-      font-size: 1.6em;
-      li {
-        display: inline-block;
-        a {
-          display: block;
-          margin: 25px 30px;
-          color: #fff;
-          text-decoration: none;
-          &:first-child {
-            margin-left: 0;
-          }
-          &:hover {
-            text-decoration: underline;
+  .section {
+    padding: 0;
+    .desktopHeader__content{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      color: $white;
+      .desktopHeader__logo {
+        flex-shrink: 0;
+      }
+      .desktopHeader__name {
+        padding-left: 20px;
+        flex-grow: 3;
+        flex-shrink: 10;
+        text-transform: uppercase;
+        line-height: 45px;
+        font-family: "Roboto-BoldCondensed", Arial;
+        font-size: 2.4em;
+        letter-spacing: 0.18em;
+      }
+      .desktopHeader__phone {
+        flex-grow: 3;
+        flex-shrink: 10;
+        padding-right: 20px;
+        text-align: right;
+        line-height: 45px;
+      }
+      .desktopHeader__order {
+        width: 156px;
+        height: 45px;
+        flex-shrink: 0;
+        border: none;
+        border-radius: 22px;
+        background: linear-gradient(to right, #0085c7, #34f3f5);
+        color: $white;
+        font-family: "PT Sans", serif;
+        font-size: 1.2em;
+      }
+      .desktopHeader__menu {
+        width: 100%;
+        order: 5;
+        font-family: 'PT Sans', serif;
+        font-size: 1.6em;
+        li {
+          display: inline-block;
+          a {
+            display: block;
+            margin: 25px 30px;
+            color: $white;
+            text-decoration: none;
+            &:first-child {
+              margin-left: 0;
+            }
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
-      }
 
+      }
     }
   }
 }
 
 .desktopHeader__scrolled {
   padding: 10px 0px;
-  background-color: rgba(255,255,255, 0.7);
-  .content {
-    .desktopMenu {
-      width: auto;
-      order: 0;
-      li {
-        a{
-          margin: 12px 30px;
-          color: $light-dark;
-          
-        }
-        &:first-child {
-          margin-left: 60px;
+  background-color: $dark-white;
+  .section {
+    .desktopHeader__content {
+      .desktopHeader__menu {
+        width: auto;
+        order: 0;
+        li {
+          a{
+            margin: 12px 30px;
+            color: $light-dark;
+            
+          }
+          &:first-child {
+            margin-left: 60px;
+          }
         }
       }
     }
