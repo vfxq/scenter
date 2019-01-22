@@ -17,7 +17,6 @@ class HelpItem extends React.Component<IProps, any>{
   }
 
   public togglePopup = () => {
-    console.log('--- toggle', this.state);
     this.setState((state:any) => (
       {show: !state.show}
     ));

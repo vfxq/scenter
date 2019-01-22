@@ -1,0 +1,52 @@
+@import "../../../../styles/\ palettу.scss";
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+
+}
+
+.bm-burger-bars {
+  background: $white;
+
+}
+
+.bm-burger-bars-hover {
+  background: transparent;
+}
+
+.bm-cross-button {
+  height: 26px !important;
+  width: 26px !important;
+  background: $light-dark;
+  border-radius: 50%;
+  border: 2px solid $dark-white; 
+  & > span {
+    top: 5px !important;
+    right: 13px !important;
+  }
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.bm-cross {
+  background: $dark-white;
+}
+
+.bm-item-list{
+  margin-top: 40px;
+}
+.bm-item {
+  padding-left: 40px;
+  a {
+    font-size: 4em;
+    line-height: 1.8em;
+    color: $white;
+    text-decoration: none;
+  }
+}

@@ -9,27 +9,12 @@
     "start": "node index.js",
     "dev": "ts-node ./src/server/index.ts"
   },
-  "jest": {
-    "setupFiles": [
-      "<rootDir>/configs/tests/test-setup.js"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.*\\.(ts|tsx)": "<rootDir>/configs/tests/test-preprocessor.js"
-    },
-    "testMatch": [
-      "**/__tests__/*.(ts|tsx|js)"
-    ]
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@svgr/webpack": "^4.1.0",
     "@types/classnames": "^2.2.7",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/express": "^4.16.0",
     "@types/lodash": "^4.14.119",
     "@types/react": "^16.7.18",
@@ -68,19 +53,23 @@
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.15",
-    "@types/jest": "^23.3.11",
+    "@types/enzyme-to-json": "^1.5.2",
+    "@types/jest": "^23.3.13",
     "@types/node": "^10.12.18",
     "@types/webpack": "^4.4.22",
     "@types/webpack-dev-middleware": "^2.0.2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
     "express": "^4.16.4",
     "file-loader": "^3.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.9",
     "react-test-renderer": "^16.7.0",
+    "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "tslint": "^5.12.1",
