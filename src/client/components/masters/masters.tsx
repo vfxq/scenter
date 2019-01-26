@@ -1,13 +1,11 @@
+import { Section } from "@shared";
 import * as React from "react";
-import { Section } from '@shared';
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./styles/style.scss";
 
-require('./styles/style.scss');
- 
 export class Masters extends React.Component {
-  render(){
-
+  public render() {
     return (
       <Section>
         <h1>Мастера</h1>
@@ -46,6 +44,6 @@ export class Masters extends React.Component {
           </div>
         </Carousel>
       </Section>
-    )
+    );
   }
 }

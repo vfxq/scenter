@@ -1,11 +1,8 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
-import { App } from '@components';
-require('./styles/style.scss');
-require('../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css');
+import { App } from "@components";
+import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+import "./styles/style.scss";
 
-ReactDOM.render(
-  <App/>, 
-  document.getElementById('app')
-);
+ReactDOM.render (<App/>, document.getElementById("app"));

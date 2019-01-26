@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { observer, Provider } from 'mobx-react';
-import appStore from '@stores/appStore';
+import { About, Contacts, Header, Help, Layout, Masters } from "@components";
+import appStore from "@stores/appStore";
 import layoutStore from "@stores/layoutStore";
-import { About, Contacts, Header, Help,Layout, Masters } from "@components";
+import { observer, Provider } from "mobx-react";
+import * as React from "react";
 
 @observer
-export class App extends React.Component<{}, {}>{
-  render(){
+export class App extends React.Component<{}, {}> {
+  public render() {
     return (
       <Provider appStore={appStore} layoutStore={layoutStore}>
         <Layout>
@@ -17,6 +17,6 @@ export class App extends React.Component<{}, {}>{
           <Contacts />
         </Layout>
       </Provider>
-    )
+    );
   }
 }

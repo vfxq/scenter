@@ -26,6 +26,16 @@ const webpackConf = {
   module: {
     rules: [
       {
+        test: /\.(tsx|ts)$/,
+        enforce: 'pre',
+        use: [
+            {
+                loader: 'tslint-loader',
+                options: { /* Loader options go here */ }
+            }
+        ]
+      },
+      {
         test: /.(tsx|ts)$/,
         loader: 'awesome-typescript-loader',
         options: {

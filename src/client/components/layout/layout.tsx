@@ -1,44 +1,36 @@
+import { inject, observer } from "mobx-react";
 import * as React from "react";
-import { inject, observer } from 'mobx-react';
-import ReactResizeDetector from 'react-resize-detector';
-
-import { TLayoutStore } from '../../store';
-interface Props {
-  layoutStore?: TLayoutStore
+import ReactResizeDetector from "react-resize-detector";
+import { TLayoutStore } from "../../store";
+interface IProps {
+  layoutStore?: TLayoutStore;
 }
 
-@inject('layoutStore')
+@inject("layoutStore")
 @observer
-export class Layout extends React.Component<Props, any>{
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+export class Layout extends React.Component<IProps, any> {
+  public nav = React.createRef<HTMLDivElement>();
+  public componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
   }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+  public componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
-
-  nav = React.createRef<HTMLDivElement>();
-
   public handleScroll = () => {
     const { setScrolled } = this.props.layoutStore;
     const scroll = window.scrollY > 100 ? true : false;
     setScrolled(scroll);
   }
-
-  private onResize = (width:number):void => {
+  public onResize = (width: number): void => {
     this.props.layoutStore.setWidth(width);
   }
-
-  render(){
+  public render() {
     const { children } = this.props;
-   
-
-    return(
+    return (
       <div ref={this.nav}>
         <ReactResizeDetector handleWidth onResize={this.onResize} />
         {children}
       </div>
-    )
+    );
   }
 }
