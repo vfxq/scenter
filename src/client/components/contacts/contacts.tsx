@@ -1,12 +1,10 @@
 import * as React from 'react';
 import Section from '../shared/section';
 
-const Contacts = () => {
+export function Contacts() {
   return (
     <Section>
       <h1>Контакты</h1>
     </Section>
   );
 }
-
-export default Contacts

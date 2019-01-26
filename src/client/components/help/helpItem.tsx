@@ -8,7 +8,7 @@ interface IProps{
   }
 }
 
-export default function HelpItem(props: IProps){
+export default function HelpItem(props: IProps) {
   const [show, setShow] = React.useState(false);
 
   const togglePopup = () => {

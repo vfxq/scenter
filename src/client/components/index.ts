@@ -1,7 +1,7 @@
-export { default as App } from './app';
-export { default as About } from "./about";
-export { default as Contacts } from "./contacts";
-export { default as Header } from "./header";
-export { default as Help } from "./help";
-export { default as Layout } from "./layout";
-export { default as Masters } from "./masters";
+export { App } from './app';
+export { About } from "./about";
+export { Contacts } from "./contacts";
+export { Header } from "./header";
+export { Help } from "./help";
+export { Layout } from "./layout";
+export { Masters } from "./masters";

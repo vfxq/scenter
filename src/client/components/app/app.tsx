@@ -5,7 +5,7 @@ import layoutStore from "@stores/layoutStore";
 import { About, Contacts, Header, Help,Layout, Masters } from "@components";
 
 @observer
-class App extends React.Component<{}, {}>{
+export class App extends React.Component<{}, {}>{
   render(){
     return (
       <Provider appStore={appStore} layoutStore={layoutStore}>
@@ -20,5 +20,3 @@ class App extends React.Component<{}, {}>{
     )
   }
 }
-
-export default App; 

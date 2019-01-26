@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Section } from '@shared';
 require('./styles/style.scss');
 
-class About extends React.Component{
+export class About extends React.Component{
   render(){
     return (
       <Section height={600}>
@@ -20,5 +20,3 @@ class About extends React.Component{
     );
   }
 }
-
-export default About;

@@ -14,7 +14,7 @@ interface Props {
 
 @inject('appStore','layoutStore')
 @observer
-class Header extends React.Component<Props, {}>{
+export class Header extends React.Component<Props, {}>{
   componentDidMount(){
     const { appStore } = this.props;
     appStore.getMenu();
@@ -39,5 +39,3 @@ class Header extends React.Component<Props, {}>{
     )
   }
 }
-
-export default Header;
