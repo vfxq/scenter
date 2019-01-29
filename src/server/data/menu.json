@@ -2,7 +2,7 @@
   "menuItems": [
     { 
       "title": "О нас",
-      "link": "#about"
+      "link": "about"
     },
     { 
       "title": "Помощь",
@@ -13,8 +13,8 @@
       "link": "video"
     },
     { 
-      "title": "Цены",
-      "link": "costs"
+      "title": "Контакты",
+      "link": "contacts"
     }
   ]
 }

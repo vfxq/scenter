@@ -1,18 +1,18 @@
-import { observable, action } from "mobx";
+import { action, observable } from "mobx";
 
 class AppStore {
-  @observable width: number = 0;
-  @observable menu: IMenu | undefined;
+  @observable public width: number = 0;
+  @observable public menu: IMenu | undefined;
 
   @action.bound
-  getMenu = (): void => {
+  public getMenu = (): void => {
     fetch("/api/menu")
       .then((res: Response) => {
         if (res.status !== 200) {
-          console.error("Looks like there was a problem. Status Code: " + res.status);  
+          console.error("Looks like there was a problem. Status Code: " + res.status);
           return;
         }
-        res.json().then(json => {
+        res.json().then((json) => {
           if (json) {
             this.menu = json;
           }
@@ -24,24 +24,24 @@ class AppStore {
   }
 }
 
-export type TMenuItem = {
-  title: string,
-  link: string,
-  map: any,
-};
+export interface IMenuItem {
+  title: string;
+  link: string;
+  map: any;
+}
 
 export interface IMenu {
   [index: number]: object;
-  menuItems: TMenuItem[];
+  menuItems: IMenuItem[];
   MenuItem: Element;
   length: number;
-};
+}
 
-export type TAppStore = {
+export interface IAppStore {
   width: number;
   menu: IMenu;
   getMenu(): void;
-};
+}
 
 const appStore = new AppStore();
 export default appStore;

@@ -15,12 +15,12 @@ class LayoutStore {
   }
 }
 
-export type TLayoutStore = {
+export interface ILayoutStore {
   width: number;
-  setWidth(width?: number): void;
   scrolled: boolean;
+  setWidth(width?: number): void;
   setScrolled(scrollPosition: boolean): void;
-};
+}
 
 const layoutStore = new LayoutStore();
 export default layoutStore;

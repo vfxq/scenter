@@ -1,4 +1,4 @@
-import { About, Contacts, Header, Video, Layout } from "@components";
+import { About, Contacts, Header, Layout, Video } from "@components";
 import appStore from "@stores/appStore";
 import layoutStore from "@stores/layoutStore";
 import { observer, Provider } from "mobx-react";

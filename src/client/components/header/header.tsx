@@ -2,15 +2,15 @@ import { Section } from "@shared";
 import { inject, observer } from "mobx-react";
 import * as React from "react";
 import * as Scroll from "react-scroll";
-import { TAppStore, TLayoutStore, TMenuItem } from "../../store";
+import { IAppStore, ILayoutStore, IMenuItem } from "../../store";
 import HeaderDesktop from "./headerDesktop";
 import * as img from "./img/header_img-min.png";
 import MenuMobile from "./menuMobile";
 import * as css from "./styles/style.scss";
 
 interface IProps {
-  appStore?: TAppStore;
-  layoutStore?: TLayoutStore;
+  appStore?: IAppStore;
+  layoutStore?: ILayoutStore;
 }
 
 @inject("appStore", "layoutStore")
@@ -35,7 +35,7 @@ export class Header extends React.Component<IProps, {}> {
     const { menu } = appStore;
     const { width } = layoutStore;
     const renderedMenu = menu && (menu.length !== 0)
-      ? menu.menuItems.map((item: TMenuItem) =>
+      ? menu.menuItems.map((item: IMenuItem) =>
         <li key={item.link}>
           <Scroll.Link to={item.link} activeClass="active" spy={true} smooth={true} duration={500} offset={-50}>
             {item.title}
