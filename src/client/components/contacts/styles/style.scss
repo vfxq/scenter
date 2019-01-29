@@ -9,8 +9,14 @@
     text-transform: uppercase;
     line-height: 45px;
     font-family: "Roboto-BoldCondensed", Arial;
-    font-size: 2.4em;
     letter-spacing: 0.18em;
     color: $light-dark;
+    font-size: 2.2em;
+  }
+  .footer__contacts {
+    padding-left: 80px;
+    font-family: "PT Sans", serif;
+    font-size: 2.2em;
+    line-height: 45px;
   }
 }

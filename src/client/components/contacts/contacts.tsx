@@ -1,4 +1,5 @@
 import * as React from "react";
+import CONSTS from "../constants";
 import { Section } from "../shared/section";
 import * as img from "./img/bg-min.jpg";
 import Logo from "./img/logo.svg";
@@ -14,12 +15,9 @@ export function Contacts() {
           духовный центр
         </div>
         <div className="footer__contacts">
-          <div className="footer__ite">
-            Новосибирск
-          </div>
-          <div className="footer__ite">
-            Москва
-          </div>
+          тел.: { CONSTS.PHONE }
+          <br />
+          e-mail:  { CONSTS.EMAIL }
         </div>
       </div>
     </Section>
