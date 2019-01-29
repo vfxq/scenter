@@ -2,6 +2,7 @@ import { Section } from "@shared";
 import classNames from "classnames";
 import { inject, observer } from "mobx-react";
 import * as React from "react";
+import CONSTS from "../../constants";
 import Logo from "./img/logo.svg";
 import * as css from "./styles/style.scss";
 
@@ -33,7 +34,7 @@ class HeaderDesktop extends React.Component<IProps, {}> {
             <ul className="desktopHeader__menu">
               {menu}
             </ul>
-              <div className="desktopHeader__phone">8 (800) 000-700-00</div>
+              <div className="desktopHeader__phone">тел. {CONSTS.PHONE}</div>
             <button className="desktopHeader__order">Записаться</button>
           </div>
         </Section>

@@ -1,4 +1,4 @@
-import { About, Contacts, Header, Help, Layout } from "@components";
+import { About, Contacts, Header, Video, Layout } from "@components";
 import appStore from "@stores/appStore";
 import layoutStore from "@stores/layoutStore";
 import { observer, Provider } from "mobx-react";
@@ -12,7 +12,7 @@ export class App extends React.Component<{}, {}> {
         <Layout>
           <Header />
           <About />
-          <Help />
+          <Video />
           <Contacts />
         </Layout>
       </Provider>
