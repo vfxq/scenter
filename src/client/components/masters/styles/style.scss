@@ -1,24 +1,21 @@
 .carousel .slide {
   background: #fff;
-  height: 220px;
   img {
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 70%;
   }
   .legend {
     color: #000;
     background: transparent;
     opacity: 0.8;
   }
+  .test {
+    //background: #ff0000;
+    // align-self: flex-end;
+  }
 }
 
-// .carousel:hover .slide {
-//   .legend {
-//     background: transparent;
-//   }
-// }
 .masterItem {
-  padding: 0 10px;
-  background: transparent;
-  
+  padding: 10px 10px;
+  height: 100%;
 }

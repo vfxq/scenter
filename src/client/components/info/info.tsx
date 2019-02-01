@@ -54,7 +54,7 @@ function Info(props: IProps) {
   const { layoutStore } = props;
   const { width } = layoutStore;
 
-  const body = width > 992 ? <Video /> : <Masters data={data}/>;
+  const body = width > 768 ? <Video /> : <Masters data={data} width={width}/>;
   return body;
 }
 
