@@ -1,4 +1,5 @@
 import { action, observable } from "mobx";
+import { requestData } from "./utils";
 
 class AppStore {
   @observable public width: number = 0;
@@ -6,21 +7,12 @@ class AppStore {
 
   @action.bound
   public getMenu = (): void => {
-    fetch("/api/menu")
-      .then((res: Response) => {
-        if (res.status !== 200) {
-          console.error("Looks like there was a problem. Status Code: " + res.status);
-          return;
-        }
-        res.json().then((json) => {
-          if (json) {
-            this.menu = json;
-          }
-        });
-      })
-      .catch((err: Error) => {
-        console.error("Getting data from .. failed");
-      });
+    const data = requestData("/api/menu");
+    data.then((json) => {
+      if (json  && json.hasOwnProperty("menuItems") &&  json.menuItems.length > 0 ) {
+        this.menu = json;
+      }
+    });
   }
 }
 

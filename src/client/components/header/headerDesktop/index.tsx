@@ -25,6 +25,7 @@ class HeaderDesktop extends React.Component<IProps, {}> {
       desktopHeader__name: true,
       hide: layoutStore.scrolled,
     });
+
     return (
       <div className={desktopHeader}>
         <Section style={css}>

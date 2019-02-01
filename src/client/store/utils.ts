@@ -1,21 +1,11 @@
-export default function requestData<T>(url:string): Promise<T>{
-  return 
-    fetch('api')
-      .then((res:Response) => {
-        console.log('test');
-        if(res.status !== 200){
-          console.error('Looks like there was a problem. Status Code: ' + res.status);  
-          return;
-        }
-        res.json().then(json=> {
-          console.log('request');
-          if(json){
-            this.menu = json
-            return json;
-          }
-        });
-      })
-      .catch((err:Error) => {
-        console.error("Getting data from .. failed");
-      })  
-}
+export const requestData = (url: string) => {
+  return fetch(url).then((res) => {
+    if (res.status !== 200) {
+      throw new Error("Error of getting data" + res.status);
+    }
+    return res.json();
+  })
+  .catch((err: Error) => {
+    throw new Error("Getting data from .. failed" + err);
+  });
+};
