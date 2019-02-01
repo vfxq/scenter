@@ -6,6 +6,7 @@
     "jsRules": {},
     "rules": {
         "adjacent-overload-signatures": true,
+        "indent": [true, "spaces", 1],
         "no-console": false
     },
     "rulesDirectory": []

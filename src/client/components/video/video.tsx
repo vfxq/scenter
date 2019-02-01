@@ -51,7 +51,7 @@ export class Video extends React.Component {
 
     return(
       <Section id="video">
-        <h1>Видео о...</h1>
+        <h1>Видео</h1>
         <div className="flex-container">
           {body}
         </div>
