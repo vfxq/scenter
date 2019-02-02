@@ -1,5 +1,5 @@
 const CONSTS = {
-  EMAIL: "info@духовныйцентр.рф",
+  EMAIL: "info@spiritcenter.ru",
   PHONE: "+7-916-885-7777",
 };
 

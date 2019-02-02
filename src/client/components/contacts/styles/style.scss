@@ -1,9 +1,13 @@
 @import "../../../styles/\ palettу.scss";
+$break-m: 992;
 
 .footer__content {
   display: flex;
-  flex-wrap: "no-wrap";
-  padding-top: 80px;
+  flex-wrap: wrap;
+  padding-top: 60px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 20px;
+  }
   .footer__name {
     padding-left: 20px;
     text-transform: uppercase;
@@ -12,11 +16,29 @@
     letter-spacing: 0.18em;
     color: $light-dark;
     font-size: 1.8em;
+    @media only screen and (max-width: 420px) {
+      padding-left: 15px;
+      font-size: 1.4em;
+      letter-spacing: 0.12em;
+    }
   }
   .footer__contacts {
     padding-left: 80px;
     font-family: "PT Sans", serif;
     font-size: 1.8em;
     line-height: 45px;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+      padding-top: 20px;
+      padding-left: 65px;
+    }
+    @media only screen and (max-width: 420px) {
+      padding-top: 0px;
+      padding-left: 60px;
+      font-size: 1.4em;
+    }
+    @media only screen and (max-width: 320px) {
+      font-size: 1.2em;
+    }
   }
 }
