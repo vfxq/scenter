@@ -1,10 +1,11 @@
 import * as React from "react";
+import YouTube from "react-youtube";
 
 interface IProps {
   data: {
     id: string,
     title: string,
-    extended: string,
+    video: string,
   };
 }
 
@@ -14,6 +15,12 @@ export default function HelpItem(props: IProps) {
   const togglePopup = () => {
     setShow(!show);
   };
+
+  const opts = {
+    height: "360",
+    width: "640",
+  };
+
   const popUpBody = () => {
     return (
       <div className="popupHelpItem">
@@ -25,7 +32,11 @@ export default function HelpItem(props: IProps) {
             <div>
               <div className="popupHelpItem__content">
                 <h4>{props.data.title}</h4>
-                {props.data.extended}
+                <YouTube
+                  videoId={props.data.video}
+                  opts={opts}
+                  // onReady={this._onReady}
+                />
               </div>
             </div>
           </div>

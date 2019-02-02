@@ -7,44 +7,44 @@ export class Video extends React.Component {
   public render() {
     const data = [
       {
-        extended: "Определить наличие проклятья может только Мастер.",
         id: "magic",
         title: "Духовные практики",
+        video: "FE1L8-PRSLo",
       },
       {
-        extended: "В традиции ламаизма - сон это малая смерть. ",
         id: "dreams",
         title: "Практическая эзотерика",
+        video: "CidoUw9_Obk",
       },
       {
-        extended: "Самая тяжелая и не предсказуемая работа для",
-        id: "request",
+        id: "highlights",
         title: "Просветление",
+        video: "UY47iicKadQ",
       },
       {
-        extended: "Быстро решить такую проблему можно с помощью приворота - магического ритуала.",
-        id: "family",
+        id: "remember",
         title: "Родовая память",
+        video: "_bHzJu2Smz8",
       },
       {
-        extended: "Поиск спутника жизни в наше время ",
         id: "routine",
         title: "Рутина. День сурка.",
+        video: "mqatpYzEadY",
       },
       {
-        extended: "Поиск спутника жизни в наше время - самая большая проблема.",
         id: "scared",
         title: "Прошлые жизни",
+        video: "7k4gLnvKepg",
       },
       {
-        extended: "Поиск спутника жизни в наше время - самая большая проблема.",
         id: "talant",
         title: "Таланты",
+        video: "M8jpAKAp5AY",
       },
       {
-        extended: "Поиск спутника жизни в наше время - самая большая проблема.",
         id: "thinking",
         title: "Навязчивые мысли",
+        video: "nDPw3ocpb1k",
       },
     ];
     const body = data.map((item) => <div key={item.id} className="helpItem"><HelpItem data={item} /></div>);
