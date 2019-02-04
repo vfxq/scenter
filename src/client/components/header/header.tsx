@@ -46,7 +46,7 @@ export class Header extends React.Component<IProps, {}> {
     return(
       <>
         {body}
-        <Section bgImage={img} height={500} style={css}>
+        <Section id="header" bgImage={img} style={css}>
           <div className="slogan">
             <h1>Найди дорогу к себе</h1>
           </div>

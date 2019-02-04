@@ -7,7 +7,7 @@ import * as css from "./styles/style.scss";
 
 export function Contacts() {
   return (
-    <Section bgImage={img} height={400} style={css} id="contacts">
+    <Section bgImage={img} style={css} id="contacts">
       <h1>Контакты</h1>
       <div className="footer__content">
         <Logo height="3.2em" width="3.2em" fill={"rgba(0,0,0,0.8)"}/>

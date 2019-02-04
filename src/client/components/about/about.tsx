@@ -5,7 +5,7 @@ import * as css from "./styles/style.scss";
 export class About extends React.Component {
   public render() {
     return (
-      <Section height={600} style={css} id="about">
+      <Section id="about" style={css}>
         <h1>О духовном центре</h1>
         <div className="bg_pict">
           <div className="about">
