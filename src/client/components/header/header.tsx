@@ -13,14 +13,28 @@ interface IProps {
   layoutStore?: ILayoutStore;
 }
 
+interface IState {
+  menuOpen: boolean;
+  isOpen?: boolean;
+}
+
 @inject("appStore", "layoutStore")
 @observer
-export class Header extends React.Component<IProps, {}> {
+export class Header extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      menuOpen: false,
+    };
+  }
+
   public componentDidMount() {
     const { appStore } = this.props;
     appStore.getMenu();
 
-    Scroll.Events.scrollEvent.register("begin", (to, element) => { console.log("begin", to, element); });
+    Scroll.Events.scrollEvent.register("begin", () => {
+      this.closeMenu();
+    });
     Scroll.Events.scrollEvent.register("end", (to, element) => { console.log("end", to, element); });
     Scroll.scrollSpy.update();
   }
@@ -28,6 +42,12 @@ export class Header extends React.Component<IProps, {}> {
   public componentWillUnmount() {
     Scroll.Events.scrollEvent.remove("begin");
     Scroll.Events.scrollEvent.remove("end");
+  }
+
+  public closeMenu = () => {
+    this.setState( () => ({
+      menuOpen: false,
+    }));
   }
 
   public render() {
@@ -42,7 +62,9 @@ export class Header extends React.Component<IProps, {}> {
            </Scroll.Link>
         </li>)
       : null;
-    const body = width < 992 ? <MenuMobile menu={renderedMenu} /> : <HeaderDesktop menu={renderedMenu} />;
+    const body = width < 992
+                  ? <MenuMobile menu={renderedMenu} menuOpen={this.state.menuOpen} />
+                  : <HeaderDesktop menu={renderedMenu} />;
     return(
       <>
         {body}

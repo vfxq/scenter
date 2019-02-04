@@ -7,6 +7,7 @@ import { CONSTS } from "@components";
 import "./slyles/style.scss";
 
 interface IProps {
+  menuOpen: boolean;
   menu?: React.ReactNode[];
   layoutStore?: {
     scrolled: boolean;
@@ -17,15 +18,16 @@ interface IProps {
 @observer
 class MenuMobile extends React.Component<IProps, {}> {
   public render() {
-    const { menu, layoutStore } = this.props;
+    const { menu, layoutStore, menuOpen } = this.props;
 
     const mobileHeader = classNames({
       mobileHeader__topline: true,
       page__scrolled: layoutStore.scrolled,
     });
+
     return(
       <div className={mobileHeader}>
-        <Menu isOpen={ false } >
+        <Menu isOpen={menuOpen} >
           {menu}
         </Menu>
         <Logo className="mobileHeader__logo"/>
