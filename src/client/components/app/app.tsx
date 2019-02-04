@@ -11,7 +11,7 @@ export class App extends React.Component<{}, {}> {
       <Provider appStore={appStore} layoutStore={layoutStore}>
         <Layout>
           <Header />
-          <About />
+          {/* <About /> */}
           <Info />
           <Contacts />
         </Layout>

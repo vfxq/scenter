@@ -35,7 +35,7 @@ export class Masters extends React.Component<IProps, {}> {
     }
     const body = data.map((item) => <div key={item.title} className={"masterItem"}><CarouselItem data={item} /></div>);
     return (
-      <Section>
+      <Section id="video">
         <h1>Видео</h1>
         <Carousel showArrows
                   showStatus={false}

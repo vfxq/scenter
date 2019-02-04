@@ -1,21 +1,30 @@
+@import "../../../styles/\ palettу.scss";
+
 .carousel .slide {
-  background: #fff;
+  background: $white;
   img {
     width: 70%;
     height: 70%;
-  }
-  .legend {
-    color: #000;
-    background: transparent;
-    opacity: 0.8;
-  }
-  .test {
-    //background: #ff0000;
-    // align-self: flex-end;
   }
 }
 
 .masterItem {
   padding: 10px 10px;
   height: 100%;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  background: transparent;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid $light-dark;
+}
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid $light-dark;
+}
+
+#video .content {
+  padding-left:0;
+  padding-right: 0;
 }
