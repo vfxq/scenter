@@ -6,15 +6,16 @@ import { slide as Menu } from "react-burger-menu";
 import "./slyles/style.scss";
 
 interface IProps {
-  menu: any;
-  layoutStore?: any;
+  menu?: React.ReactNode[];
+  layoutStore?: {
+    scrolled: boolean;
+  };
 }
 
 @inject("layoutStore")
 @observer
 class MenuMobile extends React.Component<IProps, {}> {
   public render() {
-    console.log("---", this.props.layoutStore.scrolled );
     const { menu, layoutStore } = this.props;
 
     const mobileHeader = classNames({
@@ -26,7 +27,7 @@ class MenuMobile extends React.Component<IProps, {}> {
         <Menu isOpen={ false } >
           {menu}
         </Menu>
-        <Logo className="mobileHeader__logo"/> 
+        <Logo className="mobileHeader__logo"/>
         <div className="mobileHeader__name">
           Духовный центр
         </div>
