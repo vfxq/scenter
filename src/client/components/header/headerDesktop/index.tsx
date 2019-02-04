@@ -2,13 +2,15 @@ import { Section } from "@shared";
 import classNames from "classnames";
 import { inject, observer } from "mobx-react";
 import * as React from "react";
-import CONSTS from "../../constants";
+import { CONSTS } from "../../constants";
 import Logo from "./img/logo.svg";
 import * as css from "./styles/style.scss";
 
 interface IProps {
-  menu: any;
-  layoutStore?: any;
+  menu?: React.ReactNode[];
+  layoutStore?: {
+    scrolled: boolean;
+  };
 }
 
 @inject("layoutStore")
@@ -31,7 +33,7 @@ class HeaderDesktop extends React.Component<IProps, {}> {
         <Section style={css}>
           <div className="desktopHeader__content">
             <Logo className="desktopHeader__logo" fill={logoColor} height="3.2em" width="3.2em"/>
-            <div className={desktopHeaderName}>Духовный центр</div>
+            <div className={desktopHeaderName}>{ CONSTS.NAME }</div>
             <ul className="desktopHeader__menu">
               {menu}
             </ul>

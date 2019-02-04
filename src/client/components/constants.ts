@@ -1,6 +1,5 @@
-const CONSTS = {
+export const CONSTS = {
   EMAIL: "info@spiritcenter.ru",
+  NAME: "духовный центр",
   PHONE: "+7-916-885-7777",
 };
-
-export default CONSTS;

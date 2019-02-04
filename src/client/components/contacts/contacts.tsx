@@ -1,5 +1,5 @@
 import * as React from "react";
-import CONSTS from "../constants";
+import { CONSTS } from "../constants";
 import { Section } from "../shared/section";
 import * as img from "./img/bg-min.jpg";
 import Logo from "./img/logo.svg";
@@ -12,7 +12,7 @@ export function Contacts() {
       <div className="footer__content">
         <Logo height="3.2em" width="3.2em" fill={"rgba(0,0,0,0.8)"}/>
         <div className="footer__name">
-          духовный центр
+          { CONSTS.NAME }
         </div>
         <div className="footer__contacts">
           тел.: { CONSTS.PHONE }

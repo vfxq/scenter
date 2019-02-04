@@ -1,8 +1,9 @@
-import Logo from "./img/logo.svg";
-import classNames from "classnames";
-import { inject, observer } from "mobx-react";
 import * as React from "react";
+import { inject, observer } from "mobx-react";
 import { slide as Menu } from "react-burger-menu";
+import classNames from "classnames";
+import Logo from "./img/logo.svg";
+import { CONSTS } from "@components";
 import "./slyles/style.scss";
 
 interface IProps {
@@ -29,7 +30,7 @@ class MenuMobile extends React.Component<IProps, {}> {
         </Menu>
         <Logo className="mobileHeader__logo"/>
         <div className="mobileHeader__name">
-          Духовный центр
+          { CONSTS.NAME }
         </div>
       </div>
     );
