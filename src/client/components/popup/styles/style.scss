@@ -1,0 +1,36 @@
+@import "../../../styles/\ palettу.scss";
+
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: $light-dark;
+  .popup__container {
+    position: fixed;
+    width: 680px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    text-align: left;
+    padding: 20px 40px;
+    z-index: 50;
+    @media only screen and (max-width: 690px){
+      width: 100%;
+      padding: 20px 10px;
+    }
+    .popup__header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .popup__youtube {
+      width: 100%;
+    }
+  }
+}
