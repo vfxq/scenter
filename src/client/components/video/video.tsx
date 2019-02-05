@@ -1,10 +1,45 @@
 import { Section } from "@shared";
 import * as React from "react";
-import HelpItem from "./helpItem";
+import VideoItem from "./videoItem";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./styles/style.scss";
 
-export class Video extends React.Component {
+export class Video extends React.Component<any, {}> {
+  public sliderPercentage = (): number => {
+    const { width } = this.props;
+    if (width > 596 && width <= 768) {
+      return 33;
+    } else if (width > 480 && width <= 596) {
+      return 50;
+    } else {
+      return 100;
+    }
+  }
+
+  public desktopVideo = (body: any) => {
+    return (
+      <div className="flex-container">
+        {body}
+      </div>
+    );
+  }
+
+  public mobileVideo = (body: any) => {
+    return (
+      <Carousel showArrows
+                  showStatus={false}
+                  centerMode
+                  centerSlidePercentage={this.sliderPercentage()}
+                  showIndicators={false}
+                  showThumbs={false} >
+          {body}
+        </Carousel>
+    );
+  }
+
   public render() {
+    const { width } = this.props;
     const data = [
       {
         id: "magic",
@@ -47,14 +82,12 @@ export class Video extends React.Component {
         video: "nDPw3ocpb1k",
       },
     ];
-    const body = data.map((item) => <div key={item.id} className="helpItem"><HelpItem data={item} /></div>);
+    const body = data.map((item) => <div key={item.id} className="video__item"><VideoItem data={item} /></div>);
 
     return(
       <Section id="video">
         <h1>Видео</h1>
-        <div className="flex-container">
-          {body}
-        </div>
+        {width > 768 ? this.desktopVideo(body) : this.mobileVideo(body) }
       </Section>
     );
   }

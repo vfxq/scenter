@@ -3,7 +3,6 @@ import * as React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { CarouselItem } from "./carouselItem";
-import "./styles/style.scss";
 
 interface IDataItem {
   extended: string;

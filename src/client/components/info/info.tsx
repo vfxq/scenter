@@ -54,8 +54,8 @@ function Info(props: IProps) {
   const { layoutStore } = props;
   const { width } = layoutStore;
 
-  const body = width > 768 ? <Video /> : <Masters data={data} width={width}/>;
-  return body;
+  // const body = width > 768 ? <Video /> : <Masters data={data} width={width}/>;
+  return <Video width={width}/>;
 }
 
 export default inject("layoutStore")(observer(Info));

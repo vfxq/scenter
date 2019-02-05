@@ -6,4 +6,5 @@ export { Info } from "./info";
 export { Video } from "./video";
 export { Layout } from "./layout";
 export { Masters } from "./masters";
+export { Popup } from "./popup";
 export { CONSTS } from "./constants";

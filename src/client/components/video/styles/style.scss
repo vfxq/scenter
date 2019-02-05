@@ -1,6 +1,4 @@
-.help {
-  text-align: center;
-}
+@import "../../../styles/\ palettу.scss";
 
 .flex-container {
   width: 1140;
@@ -8,47 +6,60 @@
   display: flex; /*отображает контейнер как блочный элемент*/
   flex-wrap: wrap;
   text-align: center;
-  .helpItem {
-    position: relative;
-    width: 25%;
-    padding: 30px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    .popupHelpItem {
-      position: fixed;
-      background: rgba(0,0,0,0.5);
-      top:0;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      z-index: 1000;
-      .popupHelpItem__bground {
-        width: 100%;
-        height: 100%;
-      } 
+  align-items: stretch;
+}
+
+.video__item {
+  position: relative;
+  width: 25%;
+  padding: 0px 20px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  @media only screen and (max-width: 768px){
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $white;
+  }
+  .video__item-image {
+    @media only screen and (max-width: 992px){
+      height: 220px;
+      line-height: 220px;
     }
-    .popupHelpItem__container {
-      position: absolute;
-      width: 680px;
-      height: 450px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
-      text-align: left;
-      padding: 20px 40px;
-      z-index: 2000;
-      .popupHelpItem__close {
-        position: absolute;
-        width: 40px;
-        top: 0;
-        right: 0;
-      }
+    img {
+      vertical-align: middle;
     }
   }
+  .video__item-title {
+    @media only screen and (max-width: 992px){
+      position: absolute;
+      bottom: 0px;
+      left: 20px;
+      right: 20px;
+    }
+  }
+}
+
+.carousel .slide {
+  img {
+    width: 80%;
+    height: 80%;
+    vertical-align: middle;
+  }
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  background: transparent ;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right: 8px solid $light-dark;
+}
+.carousel .control-next.control-arrow:before {
+  border-left: 8px solid $light-dark;
+}
+
+#video .content {
+  padding-left:0;
+  padding-right: 0;
 }
