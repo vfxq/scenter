@@ -19,17 +19,22 @@ export class Popup extends React.Component<any, any> {
             <div className="popup__title">
               <h4>{data.title}</h4>
             </div>
-            <div className="popupHelpItem__close" onClick={closePopup}>
+            <div className="popup__close" onClick={closePopup}>
               close
             </div>
           </div>
-              <div className="popupHelpItem__content">
+              <div className="popup__content">
                 <YouTube videoId={data.video}
                   className={"popup__youtube"}
+                  onReady={this.onReady}
                 />
               </div>
             </div>
           </div>
     );
+  }
+
+  private onReady = (event: any) => {
+    event.target.pauseVideo();
   }
 }

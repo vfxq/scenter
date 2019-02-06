@@ -48,7 +48,7 @@ export class Video extends React.Component<any, {}> {
       },
       {
         id: "dreams",
-        title: "Практическая эзотерика",
+        title: "Эзотерика",
         video: "CidoUw9_Obk",
       },
       {
