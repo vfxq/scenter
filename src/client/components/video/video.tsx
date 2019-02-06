@@ -1,13 +1,16 @@
 import { Section } from "@shared";
 import * as React from "react";
+import { inject, observer } from "mobx-react";
 import VideoItem from "./videoItem";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./styles/style.scss";
 
+@inject("layoutStore")
+@observer
 export class Video extends React.Component<any, {}> {
   public sliderPercentage = (): number => {
-    const { width } = this.props;
+    const { width } = this.props.layoutStore;
     if (width > 596 && width <= 768) {
       return 33;
     } else if (width > 480 && width <= 596) {
@@ -39,7 +42,7 @@ export class Video extends React.Component<any, {}> {
   }
 
   public render() {
-    const { width } = this.props;
+    const { width } = this.props.layoutStore;
     const data = [
       {
         id: "magic",
@@ -83,6 +86,8 @@ export class Video extends React.Component<any, {}> {
       },
     ];
     const body = data.map((item) => <div key={item.id} className="video__item"><VideoItem data={item} /></div>);
+
+    console.log("---", this.props.layoutStore);
 
     return(
       <Section id="video">

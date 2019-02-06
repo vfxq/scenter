@@ -1,4 +1,4 @@
-import { About, Contacts, Header, Info, Layout, Popup } from "@components";
+import { About, Contacts, Header, Video, Layout, Popup } from "@components";
 import appStore from "@stores/appStore";
 import layoutStore from "@stores/layoutStore";
 import popupStore from "@stores/popupStore";
@@ -13,7 +13,7 @@ export class App extends React.Component<{}, {}> {
         <Layout>
           <Header />
           {/* <About /> */}
-          <Info />
+          <Video />
           <Contacts />
           <Popup />
         </Layout>
