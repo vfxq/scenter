@@ -33,6 +33,12 @@ h1 {
   -webkit-text-fill-color: transparent;
   color: #0085c7;
   margin: 0;
+  @media screen and (max-width: 768px){
+    font-size: 2.8em;
+  }
+  @media screen and (max-width: 360px){
+    font-size: 2.4em;
+  }
 }
 h4 {
   font-family: "Lemon Tuesday", Helvetica, sans-serif;
@@ -54,4 +60,3 @@ h4 {
 .fixed {
   position: fixed;
 }
-

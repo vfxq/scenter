@@ -12,7 +12,7 @@ export class App extends React.Component<{}, {}> {
       <Provider appStore={appStore} layoutStore={layoutStore} popupStore={popupStore}>
         <Layout>
           <Header />
-          {/* <About /> */}
+          <About />
           <Video />
           <Contacts />
           <Popup />
