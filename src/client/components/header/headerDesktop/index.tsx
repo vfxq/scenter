@@ -37,8 +37,10 @@ class HeaderDesktop extends React.Component<IProps, {}> {
             <ul className="desktopHeader__menu">
               {menu}
             </ul>
-              <div className="desktopHeader__phone">тел. {CONSTS.PHONE}</div>
-            <button className="desktopHeader__order">Записаться</button>
+            <div className="desktopHeader__phone">
+              <a href={`tel:${CONSTS.PHONE}`}>тел. {CONSTS.PHONE}</a>
+            </div>
+            <a href={`mailto:${CONSTS.EMAIL}`} className="desktopHeader__order">Написать</a>
           </div>
         </Section>
       </div>

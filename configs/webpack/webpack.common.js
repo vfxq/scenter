@@ -28,12 +28,10 @@ const webpackConf = {
       {
         test: /\.(tsx|ts)$/,
         enforce: 'pre',
-        use: [
-            {
-                loader: 'tslint-loader',
-                options: { /* Loader options go here */ }
-            }
-        ]
+        use: [{
+          loader: 'tslint-loader',
+          options: { /* Loader options go here */ }
+        }]
       },
       {
         test: /.(tsx|ts)$/,
@@ -46,12 +44,6 @@ const webpackConf = {
         test: /.js$/,
         loader: 'source-map-loader',
         enforce: 'pre'
-      }, {
-        test: /\.(scss|css)$/,
-        loader: ExtractTextPlugin.extract(({
-          fallback: 'style-loader', 
-          use: ['css-loader', 'sass-loader']
-        }))
       },
       {
         test: /\.(png|jpg)$/,

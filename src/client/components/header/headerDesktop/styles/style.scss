@@ -31,12 +31,18 @@
         flex-shrink: 10;
         padding-right: 20px;
         text-align: right;
-        line-height: 45px;
-        font-size: 1.8em;
+        a {
+          line-height: 45px;
+          font-size: 1.4em;
+          text-decoration: none;
+          color: $white;
+        }
       }
       .desktopHeader__order {
+        display: block;
         width: 156px;
         height: 45px;
+        text-align: center;
         flex-shrink: 0;
         border: none;
         border-radius: 22px;
@@ -44,6 +50,8 @@
         color: $white;
         font-family: "PT Sans", serif;
         font-size: 1.2em;
+        text-decoration: none;
+        line-height: 45px;
       }
       .desktopHeader__menu {
         width: 100%;
@@ -82,16 +90,14 @@
         li {
           a{
             margin: 12px 30px;
-            color: $light-dark;
-            
+            color: $light-dark; 
           }
           &:first-child {
             margin-left: 60px;
           }
         }
       }
-      .desktopHeader__phone {
-        font-size: 1.6em;
+      .desktopHeader__phone a {
         color: $light-dark;
       }
     }

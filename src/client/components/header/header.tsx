@@ -3,10 +3,10 @@ import { inject, observer } from "mobx-react";
 import * as React from "react";
 import * as Scroll from "react-scroll";
 import { IAppStore, ILayoutStore, IMenuItem } from "../../store";
-import HeaderDesktop from "./headerDesktop";
 import * as img from "./img/header_img-min.png";
-import MenuMobile from "./menuMobile";
 import * as css from "./styles/style.scss";
+const HeaderDesktop = React.lazy(() => import("./headerDesktop"));
+const MenuMobile = React.lazy(() => import("./MenuMobile"));
 
 interface IProps {
   appStore?: IAppStore;
@@ -67,7 +67,9 @@ export class Header extends React.Component<IProps, IState> {
                   : <HeaderDesktop menu={renderedMenu} />;
     return(
       <>
-        {body}
+        <React.Suspense fallback={<div>Loading...</div>}>
+          {body}
+        </React.Suspense>
         <Section id="header" bgImage={img} style={css}>
           <div className="slogan">
             <h1>Найди дорогу к себе</h1>

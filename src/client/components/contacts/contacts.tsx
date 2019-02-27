@@ -15,9 +15,9 @@ export function Contacts() {
           { CONSTS.NAME }
         </div>
         <div className="footer__contacts">
-          тел.: { CONSTS.PHONE }
+          <a href={`tel:${CONSTS.PHONE}`}>тел. {CONSTS.PHONE}</a>
           <br />
-          e-mail:  { CONSTS.EMAIL }
+          <a href={`mailto:${CONSTS.EMAIL}`}>e-mail:  {CONSTS.EMAIL}</a>
         </div>
       </div>
     </Section>

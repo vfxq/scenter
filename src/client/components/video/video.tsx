@@ -66,7 +66,7 @@ export class Video extends React.Component<any, {}> {
       },
       {
         id: "routine",
-        title: "Рутина. День сурка.",
+        title: "Рутина.",
         video: "mqatpYzEadY",
       },
       {
@@ -86,8 +86,6 @@ export class Video extends React.Component<any, {}> {
       },
     ];
     const body = data.map((item) => <div key={item.id} className="video__item"><VideoItem data={item} /></div>);
-
-    console.log("---", this.props.layoutStore);
 
     return(
       <Section id="video">

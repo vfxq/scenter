@@ -12,7 +12,7 @@
 .video__item {
   position: relative;
   width: 25%;
-  padding: 0px 20px 30px;
+  padding-bottom: 30px;
   font-size: 1.2em;
   cursor: pointer;
   @media only screen and (max-width: 768px){
@@ -33,6 +33,13 @@
   .video__item-title {
     padding-top: 20px;
     padding-bottom: 20px;
+    font-size: 1.8em;
+    @media only screen and (max-width: 1200px){
+      font-size: 1.4em;
+    }
+    @media only screen and (max-width: 992px){
+      font-size: 1.2em;
+    }
     @media only screen and (max-width: 768px){
       position: absolute;
       bottom: 0px;
