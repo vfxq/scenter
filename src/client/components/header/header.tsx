@@ -6,7 +6,7 @@ import { IAppStore, ILayoutStore, IMenuItem } from "../../store";
 import * as img from "./img/header_img-min.png";
 import * as css from "./styles/style.scss";
 const HeaderDesktop = React.lazy(() => import("./headerDesktop"));
-import MenuMobile from "./MenuMobile";
+const MenuMobile = React.lazy(() => import("./menuMobile"));
 
 interface IProps {
   appStore?: IAppStore;
@@ -15,7 +15,6 @@ interface IProps {
 
 interface IState {
   menuOpen: boolean;
-  isOpen?: boolean;
 }
 
 @inject("appStore", "layoutStore")
@@ -56,7 +55,7 @@ export class Header extends React.Component<IProps, IState> {
     }));
   }
 
-  public render() {
+  public render(): any {
     const { appStore, layoutStore } = this.props;
     const { menu } = appStore;
     const { width } = layoutStore;
@@ -68,10 +67,11 @@ export class Header extends React.Component<IProps, IState> {
            </Scroll.Link>
         </li>)
       : null;
+
     const body = width < 992
-                  ? <MenuMobile menu={renderedMenu} isVisible={this.state.menuOpen} openMenu={this.openMenu}/>
+                  ? <MenuMobile menu={renderedMenu} isVisible={this.state.menuOpen} openMenu={this.openMenu} />
                   : <HeaderDesktop menu={renderedMenu} />;
-    return(
+    return (
       <>
         <React.Suspense fallback={<div>Loading...</div>}>
           {body}
