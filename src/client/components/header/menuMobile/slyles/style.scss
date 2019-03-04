@@ -23,16 +23,43 @@
     font-size: 1.4em;
     line-height: 1.6em;
   }
-  .mobileHeader__menu {
+  .mobileHeader__menu,
+  .mobileHeader__menu-exit-done {
+    display: none;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     z-index: 500;
     background-color: $light-dark;
     color: $white;
   }
+  .mobileHeader__menu-enter {
+    display: block;
+    right: 100%;
+  }
+  .mobileHeader__menu-enter-active {
+    display: block;
+    right: 0;
+    transition: right .2s ease;
+  }
+  .mobileHeader__menu-enter-done {
+    display: block;
+    right: 0;
+  }
+  .mobileHeader__menu-exit {
+    display: block;
+    right: 0;
+  }
+  .mobileHeader__menu-exit-active {
+    right: 100%;
+    transition: right .2s ease;
+  }
+
+  .mobileHeader__menu-exit-done {
+    display: none
+  }
+  
   .mobileHeader__container {
     position: absolute;
     top: 30px;
@@ -180,11 +207,6 @@
 	50%, 100% { transform: rotate(0deg); }
 }
 
-// .container input:checked + label:after {
-// 	-webkit-animation: animationTwo 1s ease forwards;
-// 	animation: animationTwo 1s ease forwards;
-// }
-
 @-webkit-keyframes animationTwo {
 	0%, 50% { -webkit-transform: rotate(0deg); }
 	75% { -webkit-transform: rotate(450deg); }
@@ -195,20 +217,6 @@
 	75% { transform: rotate(450deg); }
 	100% { transform: rotate(405deg); }
 }
-
-/* Burger Icon */
-
-// .container label .burger:before {
-// 	content: '';
-// 	position: absolute;
-// 	top: 6px;
-// 	width: 40px;
-// 	height: 4px;
-// 	border-radius: 2px;
-// 	background: #fafafa;
-// 	-webkit-animation: animationBurgerTopReverse 1s ease forwards;
-// 	animation: animationBurgerTopReverse 1s ease forwards;
-// }
 
 @-webkit-keyframes animationBurgerTopReverse {
 	0%, 50% { -webkit-transform: translateY(12px); opacity: 0; }
@@ -273,8 +281,6 @@
   .mobileHeader__name {
     color: $light-dark;
   }
-
-  // .mobileHeader__topline .mobileHeader__container label .burger:before
   .mobileHeader__container {
     input {
       &:checked {
