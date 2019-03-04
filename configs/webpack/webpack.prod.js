@@ -3,10 +3,15 @@ const common = require('./webpack.common.js');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 module.exports = merge(common, {
   mode: 'production',
-  devtool: 'source-map',
+  devtool: 'false',
+  performance: { 
+    hints: false 
+  },
   stats: {
     children: false
   },
@@ -29,7 +34,8 @@ module.exports = merge(common, {
         preset: ['default', { discardComments: { removeAll: true } }],
       },
       canPrint: true  
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   module: {
     rules: [

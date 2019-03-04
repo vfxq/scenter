@@ -1,6 +1,5 @@
 import * as React from "react";
 import { inject, observer } from "mobx-react";
-import { slide as Menu } from "react-burger-menu";
 import classNames from "classnames";
 import Logo from "./img/logo.svg";
 import { CONSTS } from "@components";
@@ -27,9 +26,15 @@ class MenuMobile extends React.Component<IProps, {}> {
 
     return(
       <div className={mobileHeader}>
-        <Menu isOpen={menuOpen} >
+        <div className="mobileHeader__container">
+          <input id="click" name="exit" type="checkbox" />
+          <label htmlFor="click">
+            <span className="burger"></span>
+          </label>
+        </div>
+        {/* <Menu isOpen={menuOpen} >
           {menu}
-        </Menu>
+        </Menu> */}
         <Logo className="mobileHeader__logo"/>
         <div className="mobileHeader__name">
           { CONSTS.NAME }

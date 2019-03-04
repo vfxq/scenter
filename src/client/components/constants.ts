@@ -1,5 +1,5 @@
 export const CONSTS = {
   EMAIL: "info@spiritcenter.ru",
   NAME: "духовный центр",
-  PHONE: "+7-916-885-7777",
+  PHONE: "+7 (916) 885-77-77",
 };
