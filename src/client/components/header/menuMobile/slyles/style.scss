@@ -8,9 +8,6 @@
   z-index: 500;
   background-color: transparent;
   display: flex;
-  // .bm-burger-bars {
-  //   background: $white;
-  // }
   .mobileHeader__logo {
     height: 2.2em;
     width: 2.2em;
@@ -26,7 +23,16 @@
     font-size: 1.4em;
     line-height: 1.6em;
   }
-
+  .mobileHeader__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    background-color: $light-dark;
+    color: $white;
+  }
   .mobileHeader__container {
     position: absolute;
     top: 30px;
@@ -45,7 +51,7 @@
           width: 40px;
           height: 4px;
           border-radius: 2px;
-          background: #fafafa;
+          background: $white;
           -webkit-animation: animationOne 1s ease forwards;
         	animation: animationOne 1s ease forwards;
         }
@@ -57,7 +63,7 @@
           width: 40px;
           height: 4px;
           border-radius: 2px;
-          background: #fafafa;
+          background: $white;
           -webkit-animation: animationTwo 1s ease forwards;
           animation: animationTwo 1s ease forwards;
         }
@@ -87,7 +93,7 @@
         width: 40px;
         height: 4px;
         border-radius: 2px;
-        background: #fafafa;
+        background: $white;
         -webkit-animation: animationOneReverse 1s ease forwards;
 	      animation: animationOneReverse 1s ease forwards;
       }
@@ -99,7 +105,7 @@
         width: 40px;
         height: 4px;
         border-radius: 2px;
-        background: #fafafa;
+        background: $white;
         -webkit-animation: animationTwoReverse 1s ease forwards;
         animation: animationTwoReverse 1s ease forwards;
       }
@@ -111,7 +117,7 @@
         width: 40px;
         height: 4px;
         border-radius: 2px;
-        background: #fafafa;
+        background: $white;
         -webkit-animation: animationBurgerTopReverse 1s ease forwards;
         animation: animationBurgerTopReverse 1s ease forwards;
         }
@@ -122,17 +128,14 @@
           width: 40px;
           height: 4px;
           border-radius: 2px;
-          background: #fafafa;
+          background:$white;
           -webkit-animation: animationBurgerBottomReverse 1s ease forwards;
           animation: animationBurgerBottomReverse 1s ease forwards;
         }
       }
-      
     }
-
   }
   
-
   span.menu {
     position: absolute;
     left: 150%;
@@ -143,20 +146,6 @@
     color: #fafafa;
   }
 }
-
-/* Exit Icon */
-
-// .container label:before,
-// .container input:checked + label:before {
-// 	content: '';
-// 	position: absolute;
-// 	top: 50%;
-// 	margin-top: -2px;
-// 	width: 40px;
-// 	height: 4px;
-// 	border-radius: 2px;
-// 	background: #fafafa;
-// }
 
 @-webkit-keyframes animationOneReverse {
 	0% { -webkit-transform: rotate(315deg); }
@@ -169,11 +158,6 @@
 	50%, 100% { transform: rotate(0deg); }
 }
 
-// .container input:checked + label:before {
-// 	-webkit-animation: animationOne 1s ease forwards;
-// 	animation: animationOne 1s ease forwards;
-// }
-
 @-webkit-keyframes animationOne {
 	0%, 50% { -webkit-transform: rotate(0deg); }
 	75% { -webkit-transform: rotate(360deg); }
@@ -184,23 +168,6 @@
 	75% { transform: rotate(360deg); }
 	100% { transform: rotate(315deg); }
 }
-
-// .container label:after,
-// .container input:checked + label:after {
-// 	content: '';
-// 	position: absolute;
-// 	top: 50%;
-// 	margin-top: -2px;
-// 	width: 40px;
-// 	height: 4px;
-// 	border-radius: 2px;
-// 	background: #fafafa;
-// }
-
-// .container label:after {
-// 	-webkit-animation: animationTwoReverse 1s ease forwards;
-// 	animation: animationTwoReverse 1s ease forwards;
-// }
 
 @-webkit-keyframes animationTwoReverse {
 	0% { -webkit-transform: rotate(405deg); }
@@ -270,18 +237,6 @@
 	51%, 100% { transform: translateY(12px); opacity: 0; }
 }
 
-// .container label .burger:after {
-// 	content: '';
-// 	position: absolute;
-// 	bottom: 6px;
-// 	width: 40px;
-// 	height: 4px;
-// 	border-radius: 2px;
-// 	background: #fafafa;
-// 	-webkit-animation: animationBurgerBottomReverse 1s ease forwards;
-// 	animation: animationBurgerBottomReverse 1s ease forwards;
-// }
-
 @-webkit-keyframes animationBurgerBottomReverse {
 	0%, 50% { -webkit-transform: translateY(-12px); opacity: 0; }
 	51% { -webkit-transform: translateY(-12px); opacity: 1; }
@@ -311,13 +266,50 @@
 
 .page__scrolled {
   background-color: $dark-white;
-  .bm-burger-bars {
-    background: black;
-  }  
+  
   .mobileHeader__logo {
     fill: $light-dark;
   }
   .mobileHeader__name {
     color: $light-dark;
   }
+
+  // .mobileHeader__topline .mobileHeader__container label .burger:before
+  .mobileHeader__container {
+    input {
+      &:checked {
+        + label:before {
+          background: $light-dark;
+        }
+        + label:after {
+          background: $light-dark;
+        }
+      }
+    }
+    label {
+      &:before {
+        background: $light-dark;
+      }
+      &:after {
+        background: $light-dark;
+      }
+      .burger {
+        &:before {
+        background: $light-dark;
+        }
+        &:after {
+          background: $light-dark;
+        }
+      }
+    }
+    span.menu {
+      color: $light-dark;
+    }
+  }
 }
+
+.example {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+

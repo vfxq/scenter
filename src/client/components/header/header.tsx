@@ -6,7 +6,7 @@ import { IAppStore, ILayoutStore, IMenuItem } from "../../store";
 import * as img from "./img/header_img-min.png";
 import * as css from "./styles/style.scss";
 const HeaderDesktop = React.lazy(() => import("./headerDesktop"));
-const MenuMobile = React.lazy(() => import("./MenuMobile"));
+import MenuMobile from "./MenuMobile";
 
 interface IProps {
   appStore?: IAppStore;
@@ -50,6 +50,12 @@ export class Header extends React.Component<IProps, IState> {
     }));
   }
 
+  public openMenu = () => {
+    this.setState( () => ({
+      menuOpen: true,
+    }));
+  }
+
   public render() {
     const { appStore, layoutStore } = this.props;
     const { menu } = appStore;
@@ -63,7 +69,7 @@ export class Header extends React.Component<IProps, IState> {
         </li>)
       : null;
     const body = width < 992
-                  ? <MenuMobile menu={renderedMenu} menuOpen={this.state.menuOpen} />
+                  ? <MenuMobile menu={renderedMenu} isVisible={this.state.menuOpen} openMenu={this.openMenu}/>
                   : <HeaderDesktop menu={renderedMenu} />;
     return(
       <>
