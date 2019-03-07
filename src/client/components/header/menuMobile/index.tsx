@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CSSTransition } from "react-transition-group";
+import { Transition, CSSTransition, TransitionGroup } from "react-transition-group";
 import { inject, observer } from "mobx-react";
 import classNames from "classnames";
 import Logo from "./img/logo.svg";
@@ -17,23 +17,24 @@ interface IProps {
 
 @inject("layoutStore")
 @observer
-class MenuMobile extends React.Component<IProps, {}> {
-  public render() {
+export class MenuMobile extends React.Component<IProps, {}> {
+  public render(): JSX.Element {
     const { menu, layoutStore, isVisible, openMenu } = this.props;
-    const mobileHeader = classNames({
-      mobileHeader__topline: true,
-      page__scrolled: layoutStore.scrolled,
-    });
 
-    return(
-      <div className={mobileHeader}>
+    return (
+      <CSSTransition
+        in={layoutStore.scrolled}
+        classNames="mobileHeader__topline"
+        timeout={200}
+      >
+      <div className="mobileHeader__topline">
         <CSSTransition
           in={isVisible}
-          timeout={200}
           classNames="mobileHeader__menu"
+            timeout={200}
         >
           <div className="mobileHeader__menu">
-            {this.props.menu}
+            {menu}
           </div>
         </CSSTransition>
         <div className="mobileHeader__container">
@@ -53,6 +54,7 @@ class MenuMobile extends React.Component<IProps, {}> {
           { CONSTS.NAME }
         </div>
       </div>
+      </CSSTransition>
     );
   }
 }

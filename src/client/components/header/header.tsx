@@ -55,7 +55,7 @@ export class Header extends React.Component<IProps, IState> {
     }));
   }
 
-  public render(): any {
+  public render() {
     const { appStore, layoutStore } = this.props;
     const { menu } = appStore;
     const { width } = layoutStore;

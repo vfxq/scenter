@@ -1,6 +1,6 @@
 @import "../../../../styles/\ palettу.scss";
 
-.mobileHeader__topline{
+.mobileHeader__topline {
   height: 60px;
   width: 100%;
   position: fixed;
@@ -8,6 +8,137 @@
   z-index: 500;
   background-color: transparent;
   display: flex;
+  &-enter {
+    &-active {
+      background-color: $dark-white;
+      transition: all .2s ease;
+      .mobileHeader__logo {
+        fill: $light-dark !important;
+        transition: all .2s ease;
+      }
+      .mobileHeader__name {
+        color: $light-dark !important;
+        transition: all .2s ease;
+      }
+      .mobileHeader__container {
+        label {
+          &:before {
+            background: $light-dark !important;
+            transition: all .2s ease;
+          }
+          &:after {
+            background: $light-dark !important;
+            transition: all .2s ease;
+          }
+          .burger {
+            &:before {
+              background: $light-dark !important;
+              transition: all .2s ease;
+            }
+            &:after {
+              background: $light-dark !important;
+              transition: all .2s ease;
+            }
+          }
+        }
+      }
+    }
+    &-done {
+      background-color: $dark-white;
+      .mobileHeader__logo {
+        fill: $light-dark !important;
+      }
+      .mobileHeader__name {
+        color: $light-dark !important;
+      }
+      .mobileHeader__container {
+        label {
+          &:before {
+            background: $light-dark !important;
+          }
+          &:after {
+            background: $light-dark !important;
+          }
+          .burger {
+            &:before {
+            background: $light-dark !important;
+            }
+            &:after {
+              background: $light-dark !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-exit {
+    background-color: $dark-white;
+    color: $light-dark !important;
+    transition: all .2s ease;
+    .mobileHeader__logo {
+      fill: $light-dark !important;
+    }
+    .mobileHeader__name {
+      color: $light-dark !important;
+    }
+    .mobileHeader__container {
+      label {
+        &:before {
+          background: $light-dark !important;
+        }
+        &:after {
+          background: $light-dark !important;
+        }
+        .burger {
+          &:before {
+          background: $light-dark !important;
+          }
+          &:after {
+            background: $light-dark !important;
+          }
+        }
+      }
+    }
+    &-active {
+      background-color: transparent;
+      transition: all .2s ease;
+      .mobileHeader__logo {
+        fill: white !important;
+        transition: all .2s ease;
+      }
+      .mobileHeader__name {
+        color: white !important;
+        transition: color .2s ease;
+      }
+      .mobileHeader__container {
+        label {
+          &:before {
+            background: white !important;
+          }
+          &:after {
+            background: white !important;
+          }
+          .burger {
+            &:before {
+            background: white !important;
+            }
+            &:after {
+              background: white !important;
+            }
+          }
+        }
+      }
+    }
+    &-done {
+      background-color: transparent !important;
+      .mobileHeader__logo {
+        fill: white !important;
+      }
+      .mobileHeader__name {
+        color: white !important;
+      }
+    }
+  }
   .mobileHeader__logo {
     height: 2.2em;
     width: 2.2em;
@@ -55,11 +186,9 @@
     right: 100%;
     transition: right .2s ease;
   }
-
   .mobileHeader__menu-exit-done {
     display: none
   }
-  
   .mobileHeader__container {
     position: absolute;
     top: 30px;
@@ -162,7 +291,6 @@
       }
     }
   }
-  
   span.menu {
     position: absolute;
     left: 150%;
@@ -172,6 +300,7 @@
     letter-spacing: 1px;
     color: #fafafa;
   }
+
 }
 
 @-webkit-keyframes animationOneReverse {
@@ -229,11 +358,6 @@
 	100% { transform: translateY(0px); opacity: 1; }
 }
 
-// .container input:checked + label .burger:before {
-// 	-webkit-animation: animationBurgerTop 1s ease forwards;
-// 	animation: animationBurgerTop 1s ease forwards;
-// }
-
 @-webkit-keyframes animationBurgerTop {
 	0% { -webkit-transform: translateY(0px); opacity: 1; }
 	50% { -webkit-transform: translateY(12px); opacity: 1; }
@@ -256,11 +380,6 @@
 	100% { transform: translateY(0px); opacity: 1; }
 }
 
-// .container input:checked + label .burger:after {
-// 	-webkit-animation: animationBurgerBottom 1s ease forwards;
-// 	animation: animationBurgerBottom 1s ease forwards;
-// }
-
 @-webkit-keyframes animationBurgerBottom {
 	0% { -webkit-transform: translateY(0px); opacity: 1; }
 	50% { -webkit-transform: translateY(-12px); opacity: 1; }
@@ -272,50 +391,36 @@
 	51%, 100% { transform: translateY(-12px); opacity: 0; }
 }
 
-.page__scrolled {
-  background-color: $dark-white;
-  
-  .mobileHeader__logo {
-    fill: $light-dark;
-  }
-  .mobileHeader__name {
-    color: $light-dark;
-  }
-  .mobileHeader__container {
-    input {
-      &:checked {
-        + label:before {
-          background: $light-dark;
-        }
-        + label:after {
-          background: $light-dark;
-        }
-      }
-    }
-    label {
-      &:before {
-        background: $light-dark;
-      }
-      &:after {
-        background: $light-dark;
-      }
-      .burger {
-        &:before {
-        background: $light-dark;
-        }
-        &:after {
-          background: $light-dark;
-        }
-      }
-    }
-    span.menu {
-      color: $light-dark;
-    }
-  }
-}
-
-.example {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
+// .page__scrolled {
+//   .mobileHeader__container {
+//     input {
+//       &:checked {
+//         + label:before {
+//           background: $light-dark;
+//         }
+//         + label:after {
+//           background: $light-dark;
+//         }
+//       }
+//     }
+//     label {
+//       &:before {
+//         background: $light-dark;
+//       }
+//       &:after {
+//         background: $light-dark;
+//       }
+//       .burger {
+//         &:before {
+//         background: $light-dark;
+//         }
+//         &:after {
+//           background: $light-dark;
+//         }
+//       }
+//     }
+//     span.menu {
+//       color: $light-dark;
+//     }
+//   }
+// }
